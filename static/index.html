@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS News Aggregator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .news-item {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .news-item h2 {
+            margin: 0 0 10px 0;
+        }
+        .news-item p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Latest News</h1>
+    <div id="news"></div>
+    <h2>Leave a Comment</h2>
+    <form id="commentForm">
+        <label for="publication_id">Publication ID:</label><br>
+        <input type="text" id="publication_id" name="publication_id"><br>
+        <label for="user">User:</label><br>
+        <input type="text" id="user" name="user"><br>
+        <label for="text">Comment:</label><br>
+        <textarea id="text" name="text"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        async function fetchNews() {
+            try {
+                const response = await
